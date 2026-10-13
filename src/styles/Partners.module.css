@@ -1,0 +1,32 @@
+.pageContainer {
+    composes: pageContainer from './common.module.css';
+  }
+  
+  .headerH1 {
+    composes: headerH1 from './common.module.css';
+  }
+  
+  .contactsList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contactItem {
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .note {
+    margin-top: 30px;
+    padding: 15px;
+    background: #ffebee;
+    border-radius: 8px;
+  }
+  
+  .noteText {
+    margin: 0;
+    color: #c62828;
+  }

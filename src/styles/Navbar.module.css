@@ -1,0 +1,68 @@
+.nav {
+    background: linear-gradient(90deg, #9db1d2, #8cb6fb, #adacaa);
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .navButtons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    color: #fff;
+    background-color: #3498db;
+  }
+  
+  .btn:hover:not(.btnActive) {
+    background-color: #2980b9;
+  }
+  
+  .btnActive {
+    background-color: #2980b9;
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  .loginBtn {
+  padding: 10px 24px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.loginBtn:hover {
+  background-color: #fff;
+  color: #2c3e50;
+}
+
+
+@media (max-width: 600px) {
+  .nav {
+    padding: 0.75rem 1rem;
+    gap: 10px;
+  }
+  .btn,
+  .loginBtn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
