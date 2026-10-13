@@ -2,7 +2,7 @@
   composes: pageContainer from './common.module.css';
 }
 
-/* Две колонки: слева и справа партнёры */
+/* Список партнёров в две колонки */
 .partners {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10,46 +10,89 @@
   margin-top: 20px;
 }
 
-/* Карточка партнёра */
+/* Карточка партнёра: сверху логотип + стрелка, снизу подпись */
 .partner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
-.partner:hover {
-  transform: translateY(-4px);
+/* Верхний ряд: логотип слева, стрелка справа */
+.partnerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 /* Логотип */
 .partnerLogo {
-  width: 300px;
-  height: 300px;
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
-  margin-bottom: 15px;
   background: #fff;
   border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  padding: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-/* Текст под логотипом */
+/* Кнопка-ссылка со стрелкой ↗ */
+.partnerLink {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8eb6dd, #3498db);
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.25);
+}
+
+.partnerLink:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(52, 152, 219, 0.4);
+}
+
+.partnerLink:active {
+  transform: translateY(0);
+}
+
+/* Подпись под логотипом и стрелкой */
 .partnerText {
   color: #2c3e50;
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
-  max-width: 260px;
 }
 
-/* Адаптив: на узких экранах — в столбик */
+/* Адаптив: на узких экранах — одна колонка */
 @media (max-width: 700px) {
   .partners {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 24px;
+  }
+  .partner {
+    padding: 18px;
+  }
+  .partnerLogo {
+    flex: 0 0 90px;
+    width: 90px;
+    height: 90px;
+  }
+  .partnerLink {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
   }
 }
