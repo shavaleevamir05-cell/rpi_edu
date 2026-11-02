@@ -29,13 +29,16 @@ function App() {
         }
 
         if (currentSection === 'lecturers') {
-            return selectedLecturerId ? (
-                <LecturerPage
-                    lecturerId={selectedLecturerId}
-                    onBack={() => setSelectedLecturerId(null)}
-                />
-            ) : (
-                <Lecturers onSelect={setSelectedLecturerId} />
+            return (
+                <>
+                    <Lecturers onSelect={setSelectedLecturerId} />
+                    {selectedLecturerId && (
+                        <LecturerPage
+                            lecturerId={selectedLecturerId}
+                            onBack={() => setSelectedLecturerId(null)}
+                        />
+                    )}
+                </>
             );
         }
 

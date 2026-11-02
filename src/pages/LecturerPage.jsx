@@ -1,4 +1,5 @@
 ﻿import LECTURERS from '../data/lecturers';
+import Modal from '../components/Modal/Modal';
 import styles from '../styles/LecturerPage.module.css';
 
 function LecturerPage({ lecturerId, onBack }) {
@@ -6,12 +7,12 @@ function LecturerPage({ lecturerId, onBack }) {
 
     if (!lecturer) {
         return (
-            <div className={styles.pageContainer}>
+            <Modal isOpen onClose={onBack}>
                 <p>Лектор не найден.</p>
                 <button className={styles.backBtn} onClick={onBack}>
                     ← Назад к списку
                 </button>
-            </div>
+            </Modal>
         );
     }
 
@@ -27,7 +28,7 @@ function LecturerPage({ lecturerId, onBack }) {
     } = lecturer;
 
     return (
-        <div className={styles.pageContainer}>
+        <Modal isOpen onClose={onBack}>
             <button className={styles.backBtn} onClick={onBack}>
                 ← Назад к списку
             </button>
@@ -113,7 +114,7 @@ function LecturerPage({ lecturerId, onBack }) {
                     )}
                 </div>
             </div>
-        </div>
+        </Modal>
     );
 }
 
